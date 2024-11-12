@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab 4.3</title>
+</head>
+<body>
+
+<h2>Обробка масиву з вбудованими методами</h2>
+<div id="output"></div>
+
+<script>
+    let arr = Array.from({ length: 15 }, () => Math.floor(Math.random() * 100) + 1);
+    document.getElementById('output').innerHTML += "Початковий масив: " + arr.join(" ") + "<br>";
+
+    let minValue = Math.min(...arr);
+    let minIndex = arr.indexOf(minValue);
+    document.getElementById('output').innerHTML += "Мінімальне значення: " + minValue + "<br>";
+
+    let targetIndex = 4;
+    document.getElementById('output').innerHTML += "Номер елемента для заміни: " + targetIndex + "<br>";
+
+    [arr[minIndex], arr[targetIndex]] = [arr[targetIndex], arr[minIndex]];
+
+    document.getElementById('output').innerHTML += "Масив після заміни: " + arr.join(" ") + "<br>";
+</script>
+
+</body>
+</html>
